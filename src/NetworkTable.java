@@ -1,16 +1,18 @@
 public class NetworkTable {
-    private int matrixRows;
+    static int matrixRows;
     private int matrixCols = Constants.matrixCols;
     static String[][] matrix;
 
     void generateMatrix(){
-        matrixRows = DataInput.workspaces
-                    + DataInput.departmentsOnFirstFloor
-                    + DataInput.departmentsOnSecondFloor
-                    + DataInput.DMZ_Router
-                    + DataInput.wifiRouter
+        matrixRows =  DataInput.workspaces
+                    + DataInput.departmentsOnFirstFloor * 2
+                    + DataInput.departmentsOnSecondFloor * 2
+                    + DataInput.DMZ_Router * 2
+                    + DataInput.wifiRouter * 2
                     + DataInput.wifiWorkspaces
                     + Constants.firstRowWithLabelsInTable;
+
+        System.out.println("rows: " + matrixRows);
 
         matrix = new String[matrixRows][matrixCols];
     }
